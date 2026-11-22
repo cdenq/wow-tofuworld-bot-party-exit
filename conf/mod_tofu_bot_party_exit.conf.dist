@@ -1,0 +1,56 @@
+[worldserver]
+
+########################################
+# mod-tofu-bot-party-exit
+########################################
+#
+# What a playerbot does after it leaves a group that a real player led (kicked, left, or the group disbanded).
+# Bots in battleground and arena groups, bots whose master is not a real player (bot-only groups), SelfBots, and
+# enrolled autonomous alts (mod-autonomous-altbots handles those) are never touched.
+#
+#    TofuBotPartyExit.Enable
+#        Description: Turn the module on.
+#        Default:     0 - Off (stock playerbots behavior: the bot keeps you as master and keeps following you)
+#                     1 - On
+
+TofuBotPartyExit.Enable = 0
+
+#    TofuBotPartyExit.DelaySeconds
+#        Description: Seconds to wait after the bot leaves the group before acting. If it is back in a group with a
+#                     real player by then (for example, re-invited after a misclick), nothing happens.
+#        Default:     5
+
+TofuBotPartyExit.DelaySeconds = 5
+
+#    TofuBotPartyExit.RandomBots.ReleaseMaster
+#        Description: A random bot drops its master and goes back to its random-bot strategies (new rpg, quest,
+#                     grind).
+#        Default:     1 - On
+
+TofuBotPartyExit.RandomBots.ReleaseMaster = 1
+
+#    TofuBotPartyExit.RandomBots.TeleportBack
+#        Description: A released random bot is also teleported back to where it stood when it joined the group.
+#                     Skipped when it is dead, on a flight path, or joined inside an instance.
+#        Default:     1 - On
+
+TofuBotPartyExit.RandomBots.TeleportBack = 1
+
+#    TofuBotPartyExit.AddclassBots.Logout
+#        Description: A class bot (addclass) logs out.
+#        Default:     1 - On
+
+TofuBotPartyExit.AddclassBots.Logout = 1
+
+#    TofuBotPartyExit.AltBots.Logout
+#        Description: An altbot summoned on demand (.playerbots bot add, or invited from the account, guild, or a
+#                     linked account) logs out. Enrolled autonomous alts are not affected.
+#        Default:     1 - On
+
+TofuBotPartyExit.AltBots.Logout = 1
+
+#    TofuBotPartyExit.VerboseLogging
+#        Description: Also log the bots that were checked and skipped, with the reason. Actions are always logged.
+#        Default:     0 - Off
+
+TofuBotPartyExit.VerboseLogging = 0
